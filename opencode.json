@@ -1,0 +1,10 @@
+{
+  "name": "TRUST360-V2-Guardian",
+  "version": "2099",
+  "architect": "Marco Antonio Rojas Valdovinos",
+  "whatsapp": "+52 722 586 2335",
+  "commandPrefix": "/oc",
+  "agents": {
+    "repo-agent": ".opencode/agent/repo-agent.md"
+  }
+}
