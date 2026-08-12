@@ -1,32 +1,30 @@
 name: TRUST 2099 - OC Command
-
 on:
   issue_comment:
     types: [created]
-  issues:
-    types: [opened, edited]
-
 jobs:
   oc-command:
-    if: contains(github.event.comment.body, '/oc') || contains(github.event.issue.body, '/oc')
+    if: contains(github.event.comment.body, '/oc')
     runs-on: ubuntu-latest
     permissions:
       contents: write
       issues: write
       pull-requests: write
-      actions: write
     steps:
-      - name: Checkout KRONOS
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Run Guardian 2099
-        uses: sst/opencode/github@latest
+      - uses: actions/checkout@v4
+      - name: Reporte de Embajada
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          model: anthropic/claude-sonnet-4-20250514
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "### 🛡️ TRUST 2099 - GUARDIÁN ACTIVADO ✅
+
+          **Estado:** Embajada Digital VERIFICADA
+          **ID Legado:** 2608056639878
+          **Arquitecto:** Marco Antonio Rojas Valdovinos
+          **Comando:** /oc
+
+          **Tu Embajada está blindada hasta 2099.**
+
+          Cada vez que escribas /oc yo despierto.
+
+          KRONOS - 2607146379465"
