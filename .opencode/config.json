@@ -1,0 +1,6 @@
+{
+  "agent": "trust360-guardian",
+  "model": "claude-sonnet",
+  "owner": "kronosproyect",
+  "autoReview": true
+}
