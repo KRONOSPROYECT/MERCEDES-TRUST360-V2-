@@ -1,0 +1,19 @@
+{
+  "name": "TRUST360-V2-Guardian",
+  "version": "2.0",
+  "architect": "Marco Antonio Rojas Valdovinos",
+  "project": "MERCEDES TRUST360 V2 - EMBAJADA DIGITAL",
+  "whatsapp": "+52 722 586 2335",
+  "commandPrefix": "/oc",
+  "agents": {
+    "repo-agent": ".opencode/agent/repo-agent.md",
+    "review": ".opencode/agent/review.md",
+    "bugfix": ".opencode/agent/bugfix.md"
+  },
+  "rules": [
+    "Nunca borrar la firma: CONCEPTO Y ARQUITECTURA POR MARCO ANTONIO ROJAS VALDOVINOS",
+    "Mantener colores negro #040506 y oro #D4AF37",
+    "WhatsApp oficial siempre 527225862335",
+    "Diseño mobile first"
+  ]
+}
