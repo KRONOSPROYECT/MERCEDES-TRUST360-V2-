@@ -1,0 +1,32 @@
+name: TRUST 2099 - OC Command
+
+on:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened, edited]
+
+jobs:
+  oc-command:
+    if: contains(github.event.comment.body, '/oc') || contains(github.event.issue.body, '/oc')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      actions: write
+    steps:
+      - name: Checkout KRONOS
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Run Guardian 2099
+        uses: sst/opencode/github@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          model: anthropic/claude-sonnet-4-20250514
